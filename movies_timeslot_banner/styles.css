@@ -1,0 +1,14 @@
+#timeslot-banner {
+    background-color: #f4f4f4;
+    color: #000;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
