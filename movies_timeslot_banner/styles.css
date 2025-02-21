@@ -18,3 +18,9 @@
     font-weight: bold;
     /* Optional: Makes it stand out more */
 }
+
+#timeslot-banner .ok {
+    color: green;
+    font-weight: bold;
+    /* Optional: Makes it stand out more */
+}

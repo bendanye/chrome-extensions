@@ -48,8 +48,12 @@ chrome.storage.sync.get(['theatre', 'time'], function (data) {
             const theatreMatch = pageText.match(theatreRegex);
             if (theatreMatch) {
                 const theatre = theatreMatch[0].split("Hall")[0]
-                if (preferredTheatre && !theatre.includes(preferredTheatre)) {
-                    message = `<span class="highlight">${theatre}</span>`
+                if (preferredTheatre) {
+                    if (theatre.includes(preferredTheatre)) {
+                        message = `<span class="ok">${theatre}</span>`
+                    } else {
+                        message = `<span class="highlight">${theatre}</span>`
+                    }
                 } else {
                     message = theatre
                 }
@@ -70,7 +74,7 @@ chrome.storage.sync.get(['theatre', 'time'], function (data) {
                     if (time1Minutes < time2Minutes) {
                         message += ' ' + `<span class="highlight">${time}</span>`
                     } else {
-                        message += ' ' + time;
+                        message += ' ' + `<span class="ok">${time}</span>`;
                     }
                 } else {
                     message += ' ' + time;
