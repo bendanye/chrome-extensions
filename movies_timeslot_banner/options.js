@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const theatre = document.getElementById("theatre");
     chrome.storage.sync.get(['theatre', 'time'], function (data) {
         if (data.theatre) {
-            document.getElementById('theatre').value = data.theatre;
+            theatre.value = value = data.theatre
         }
         if (data.time) {
             document.getElementById('time').value = data.time;
@@ -12,11 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // Save settings when form is submitted
 document.getElementById('settingsForm').addEventListener('submit', function (event) {
     event.preventDefault();
-
-    const theatre = document.getElementById('theatre').value;
+    const selectedOption = theatre.value;
     const time = document.getElementById('time').value;
 
-    chrome.storage.sync.set({ theatre: theatre, time: time }, function () {
+    chrome.storage.sync.set({ theatre: selectedOption, time: time }, function () {
         console.log('Settings saved');
     });
 });
