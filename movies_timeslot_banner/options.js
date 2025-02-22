@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const theatre = document.getElementById("theatre");
-    chrome.storage.sync.get(['theatre', 'time'], function (data) {
-        if (data.theatre) {
-            theatre.value = value = data.theatre
+    const shaw_theatre = document.getElementById("shaw_theatre");
+    chrome.storage.sync.get(['shaw_theatre', 'shaw_time'], function (data) {
+        if (data.shaw_theatre) {
+            shaw_theatre.value = value = data.shaw_theatre
         }
-        if (data.time) {
-            document.getElementById('time').value = data.time;
+        if (data.shaw_time) {
+            document.getElementById('shaw_time').value = data.shaw_time;
         }
     });
 });
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // Save settings when form is submitted
 document.getElementById('settingsForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    const selectedOption = theatre.value;
-    const time = document.getElementById('time').value;
+    const selectedOption = shaw_theatre.value;
+    const time = document.getElementById('shaw_time').value;
 
-    chrome.storage.sync.set({ theatre: selectedOption, time: time }, function () {
+    chrome.storage.sync.set({ shaw_theatre: selectedOption, shaw_time: time }, function () {
         console.log('Settings saved');
     });
 });

@@ -1,10 +1,10 @@
-chrome.storage.sync.get(['theatre', 'time'], function (data) {
+chrome.storage.sync.get(['shaw_theatre', 'shaw_time'], function (data) {
     setTimeout(() => {
         const pageUrl = window.location.href;
         if (pageUrl.includes('gv.com.sg')) {
             checkForGoldenVillage()
         } else if (pageUrl.includes('shaw.sg')) {
-            checkForshaw(data.theatre, data.time)
+            checkForshaw(data.shaw_theatre, data.shaw_time)
         }
 
         function checkForGoldenVillage() {
