@@ -61,7 +61,11 @@ chrome.storage.sync.get(['shaw_theatre', 'shaw_time'], function (data) {
 
             const dateMatch = pageText.match(dateRegex);
             if (dateMatch) {
-                message += ' ' + dateMatch[0];
+                if (dateMatch[0].includes("SAT ") || dateMatch[0].includes("SUN ")) {
+                    message += ' ' + `<span class="ok">${dateMatch[0]}</span>`
+                } else {
+                    message += ' ' + `<span class="highlight">${dateMatch[0]}</span>`;
+                }
             }
 
             const timeMatch = pageText.match(timeRegex);
