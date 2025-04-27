@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "Timeslot Extractor Banner",
-    "description": "Extracts Timeslot from the page and displays it as a banner.",
+    "name": "Movie Timeslot Extractor Banner",
+    "description": "Extracts Movie Timeslot from the page and displays it as a banner.",
     "version": "1.0",
     "options_page": "options.html",
     "permissions": [
