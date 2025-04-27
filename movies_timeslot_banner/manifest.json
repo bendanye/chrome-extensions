@@ -9,6 +9,16 @@
         "alarms",
         "storage"
     ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "singapore_ph.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "content_scripts": [
         {
             "matches": [
